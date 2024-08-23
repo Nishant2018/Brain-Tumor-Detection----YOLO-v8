@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Prediction</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Brain Tumor Detection (YOLO V8)</h1>
+    </header>
+    <main>
+        <section class="intro-section">
+            <div class="intro-container">
+                <p>Welcome to the Image Prediction Tool! This application allows you to upload an image and obtain predictions based on a pre-trained model. Follow the instructions below to get started:</p>
+                <ul>
+                    <li><strong>Select an Image:</strong> Choose an image file from your device by clicking the "Choose File" button.</li>
+                    <li><strong>Submit for Prediction:</strong> Click the "Predict" button to submit your image for analysis.</li>
+                    <li><strong>View Results:</strong> Once the model processes your image, prediction results will be displayed below.</li>
+                </ul>
+                <p>The predictions include details such as the class of detected objects, their locations within the image, and confidence scores. If an error occurs during processing, an error message will be shown above the form.</p>
+            </div>
+        </section>
+
+        <!-- Real-Time Detection Image Demo -->
+        <section class="demo-section">
+            <div class="demo-container">
+                <h2>Real-Time Detection Example</h2>
+                <p>See how the detection model works with the example images below:</p>
+                <div class="images-container">
+                    <img src="../static/images/example.jpg" alt="Example Image 1" class="demo-image">
+                    <img src="../static/images/example1.jpg" alt="Example Image 2" class="demo-image">
+                </div>
+                <p><strong>Example Image 1:</strong> Tumor detected with a confidence of 29% and normal tissue detected with a confidence of 32%</p>
+                <p><strong>Example Image 2:</strong> All areas are normal with a confidence of 83%</p>
+
+                <p>Upload your own image to get predictions similar to the examples above.</p>
+            </div>
+        </section>
+
+        <!-- Real-Time Detection Link -->
+        <section class="link-section">
+            <div class="link-container">
+                <p>Explore our <strong>real-time detection demo</strong> powered by a state-of-the-art deep learning model, trained on RoboFlow's robust platform.</p>
+                <p>The model, designed for <strong>brain tumor detection</strong>, leverages advanced image analysis techniques to provide accurate and swift predictions. RoboFlow enables seamless integration and deployment of machine learning models, offering a user-friendly interface and powerful tools for managing and refining your models.</p>
+                <p>To see the model in action and experience its capabilities, <a href="https://universe.roboflow.com/nishant-raghuwanshi-deep-learning/brain-tumor-40crk-zgelw/model/1" target="_blank">click here</a> to access the live demo. This demo showcases the model's ability to analyze and detect brain tumors in real-time using uploaded images.</p>
+                <p>RoboFlow's platform supports a wide range of machine learning tasks, from image classification to object detection, making it an invaluable resource for developing and deploying AI solutions. Learn more about RoboFlow and how it can enhance your AI projects at their official site.</p>
+            </div>
+        </section>
+
+                <!-- Image Upload Form -->
+        <form method="POST" enctype="multipart/form-data" class="upload-form">
+            <h2>Upload an Image for Prediction</h2>
+            <p>To get predictions on your image, please upload a file using the form below. Our model will analyze the image and provide results based on its training.</p>
+            
+            <input type="file" name="image" accept="image/*" class="file-input" required>
+            <input type="submit" value="Predict" class="submit-button">
+            
+            <p class="info-text">Supported formats: JPG, JPEG, PNG. Max file size: 5MB.</p>
+        </form>
+
+        <!-- Error Message -->
+        {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+
+        <!-- Prediction Results -->
+        {% if predictions %}
+            <section class="predictions-section">
+                <div class="predictions-container">
+                    <h2>Prediction Results</h2>
+                    <p>The table below displays the results of the image analysis. Each row represents a detected object, with the following details:</p>
+                    <ul>
+                        <li><strong>Class:</strong> The class label of the detected object.</li>
+                        <li><strong>X:</strong> The x-coordinate of the object's bounding box.</li>
+                        <li><strong>Y:</strong> The y-coordinate of the object's bounding box.</li>
+                        <li><strong>Width:</strong> The width of the object's bounding box.</li>
+                        <li><strong>Height:</strong> The height of the object's bounding box.</li>
+                        <li><strong>Confidence:</strong> The confidence score indicating the likelihood of the detected object's presence.</li>
+                        <li><strong>Class ID:</strong> A unique identifier for the class.</li>
+                        <li><strong>Detection ID:</strong> A unique identifier for the detection instance.</li>
+                        <li><strong>Parent ID:</strong> The ID of the parent object if applicable.</li>
+                        <li><strong>Points:</strong> Coordinates of key points related to the detected object.</li>
+                    </ul>
+                    <table class="predictions-table">
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>X</th>
+                                <th>Y</th>
+                                <th>Width</th>
+                                <th>Height</th>
+                                <th>Confidence</th>
+                                <th>Class ID</th>
+                                <th>Detection ID</th>
+                                <th>Parent ID</th>
+                                <th>Points</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for prediction in predictions %}
+                                <tr>
+                                    <td>{{ prediction.class }}</td>
+                                    <td>{{ prediction.x }}</td>
+                                    <td>{{ prediction.y }}</td>
+                                    <td>{{ prediction.width }}</td>
+                                    <td>{{ prediction.height }}</td>
+                                    <td>{{ prediction.confidence }}</td>
+                                    <td>{{ prediction.class_id }}</td>
+                                    <td>{{ prediction.detection_id }}</td>
+                                    <td>{{ prediction.parent_id }}</td>
+                                    <td>
+                                        {% for point in prediction.points %}
+                                            ({{ point.x }}, {{ point.y }})<br>
+                                        {% endfor %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        {% endif %}
+    </main>
+    <script>
+    document.getElementById('file-input').addEventListener('change', function(event) {
+        var file = event.target.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                // Optional: Add code to preview the image or handle the file
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+    </script>
+</body>
+</html>

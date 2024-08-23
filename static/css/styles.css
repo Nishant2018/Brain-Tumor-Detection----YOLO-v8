@@ -1,0 +1,297 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Intro Section Styles */
+.intro-section {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 1400px;
+}
+
+/* Intro Container Styles */
+/* Intro Container Styles */
+.intro-container {
+    background-color: #b3b2b2;
+    border-radius: 12px; /* Modern border-radius */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 32.2); /* Enhanced box-shadow for depth */
+    padding: 40px;
+    margin: 20px auto; /* Centered container with added top and bottom margin */
+    width: 100%; /* Set width to 100% to fill the available space */
+    max-width: 1200px; /* Maximum width */
+    border: 1px solid #ddd; /* Optional: light border for additional definition */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.intro-section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.intro-section ul {
+    list-style-type: disc;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 800px;
+}
+
+.intro-section li {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Demo Section Styles */
+.demo-section {
+    background-color: #f6fbeb;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 32.1);
+    margin: 20px auto;
+    max-width: 90%;
+    text-align: center;
+}
+
+.demo-container {
+    margin: 0 auto;
+    max-width: 900px; /* Adjusted max-width for better fit */
+}
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between images */
+    margin: 20px 0;
+}
+
+.demo-image {
+    width: 45%; /* Adjusted width to make images smaller and fit side by side */
+    max-width: 400px; /* Optional: limit the maximum width */
+    border: 2px solid #0a79f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 32.1);
+}
+/* Modern Image Upload Section */
+.upload-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #fcf9f9; /* Light background for contrast */
+}
+
+.upload-card {
+    background-color: #f9d1f2;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 1300px; /* Limit width for a neat appearance */
+    width: 100%;
+    text-align: center;
+}
+
+.upload-card h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9bee7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 32.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1305px;
+}
+.upload-card p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.upload-area {
+    border: 2px dashed #007bff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    position: relative;
+}
+.upload-area:hover {
+    background-color: #f0f0f0;
+}
+
+
+.upload-area input[type="file"] {
+    display: none;
+}
+
+
+.upload-area label.upload-button {
+    display: block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+
+.upload-area label.upload-button:hover {
+    background-color: #0056b3;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.info-text {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Upload Form Styles */
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9bee7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 32.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1305px;
+}
+
+.file-input {
+    margin-bottom: 15px;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Error Message Styles */
+.error-message {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Predictions Section Styles */
+.predictions-section {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+.predictions-container {
+    background-color: #e9e7e7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 32.1);
+    padding: 20px;
+}
+
+.predictions-section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Predictions Table Styles */
+.predictions-table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #e2f3f7;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 32.1);
+}
+
+.predictions-table th, .predictions-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.predictions-table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.predictions-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.predictions-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Link Section Styles */
+.link-section {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 80%;
+}
+
+.link-container {
+    background-color: #f2f0f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 32.1);
+    padding: 20px;
+}
+
+.link-section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.link-section a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-section a:hover {
+    text-decoration: underline;
+}
