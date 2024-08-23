@@ -58,6 +58,11 @@
             <input type="submit" value="Predict" class="submit-button">
             
             <p class="info-text">Supported formats: JPG, JPEG, PNG. Max file size: 5MB.</p>
+            <section class="slider-section">
+                <h2>Set Confidence Threshold</h2>
+                <input type="range" min="0" max="100" value="50" id="confidence-slider" name="confidence" class="slider">
+                <p>Confidence: <span id="confidence-value">50</span>%</p>
+            </section>
         </form>
 
         <!-- Error Message -->
@@ -135,5 +140,10 @@
         }
     });
     </script>
+    <script>
+        document.getElementById('confidence-slider').addEventListener('input', function() {
+            document.getElementById('confidence-value').innerText = this.value;
+        });
+    </script>        
 </body>
 </html>
