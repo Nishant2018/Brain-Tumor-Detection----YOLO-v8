@@ -18,9 +18,8 @@ Created a web application for sentiment analysis on tweets, complete with visual
 
 📊 **Check out the visualizations and insights** from these projects!
 
-![Live Project]([URL-to-your-image](https://app.roboflow.com/nishant-raghuwanshi-deep-learning/brain-tumor-40crk-zgelw/visualize/1))
 
-🔗 **[Link to your project or blog]**
+🔗 **[https://app.roboflow.com/nishant-raghuwanshi-deep-learning/brain-tumor-40crk-zgelw/visualize/1]**
 
 Feel free to reach out if you have any questions or want to collaborate on similar projects!
 
