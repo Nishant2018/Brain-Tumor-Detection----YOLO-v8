@@ -117,11 +117,15 @@ header {
     margin: 20px auto;
     max-width: 1305px;
 }
+
 .upload-card p {
     margin-bottom: 20px;
     color: #555;
 }
 
+.slider-section {
+    margin-top: 20px;
+}
 .upload-area {
     border: 2px dashed #007bff;
     border-radius: 8px;
