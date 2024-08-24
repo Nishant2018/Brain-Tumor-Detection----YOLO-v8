@@ -7,7 +7,7 @@ Excited to share my latest work combining cutting-edge AI technologies:
 ### YOLOv8
 The newest in the YOLO series, offering enhanced accuracy and real-time object detection. Whether it’s for surveillance or autonomous vehicles, YOLOv8 sets a new benchmark! 🚗📹
 
-### Image Segmentation
+### Image Segmentation    
 Diving deep into image segmentation, including semantic and instance segmentation. This technology is crucial for applications from medical imaging to autonomous systems. 🏥🚀
 
 ### Brain Tumor Detection
